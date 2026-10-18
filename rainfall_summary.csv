@@ -1,0 +1,28 @@
+
+with open("rainfall_summary.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.writer(file)
+
+    writer.writerow([
+        "county",
+        "annual_total_mm",
+        "wettest_month",
+        "dry_months",
+        "planting_window"
+    ])
+
+    for county, total, wettest, dry, window in zip(
+        counties,
+        annual_totals,
+        wettest_months,
+        dry_month_counts,
+        planting_windows
+    ):
+        writer.writerow([
+            county,
+            int(total),
+            wettest,
+            int(dry),
+            window
+        ])
+
+print("rainfall_summary.csv created successfully.")

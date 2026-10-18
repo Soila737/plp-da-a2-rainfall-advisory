@@ -1,28 +1,6 @@
-
-with open("rainfall_summary.csv", "w", newline="", encoding="utf-8") as file:
-    writer = csv.writer(file)
-
-    writer.writerow([
-        "county",
-        "annual_total_mm",
-        "wettest_month",
-        "dry_months",
-        "planting_window"
-    ])
-
-    for county, total, wettest, dry, window in zip(
-        counties,
-        annual_totals,
-        wettest_months,
-        dry_month_counts,
-        planting_windows
-    ):
-        writer.writerow([
-            county,
-            int(total),
-            wettest,
-            int(dry),
-            window
-        ])
-
-print("rainfall_summary.csv created successfully.")
+county,annual_total_mm,wettest_month,dry_months,planting_window
+Nairobi,1045,April,3,April-May
+Nakuru,916,April,2,July-August
+Kisumu,1371,April,0,March-April
+Mombasa,985,May,2,April-May
+Machakos,820,April,5,March-April
